@@ -13,7 +13,7 @@ function App() {
       <main>
         <div className="arrow-up">
           {" "}
-          <a className="arrow-up-a" href="#">
+          <a className="arrow-up-a" href="/#">
             <i className="fas fa-arrow-circle-up"></i>
           </a>
         </div>

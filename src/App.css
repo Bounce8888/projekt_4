@@ -1,38 +1,411 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  scroll-behavior: smooth;
+  font-family: montserrat, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.wrapper {
+  margin: 0 auto;
+  width: 90vw;
+  padding: 0 7px;
+}
+
+@media (min-width: 960px) {
+  .wrapper {
+    width: 960px;
+    max-width: 960px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* menu */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 14px;
+  background-color: #4e4e4e;
+  color: #fff;
+  z-index: 3;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.company-logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu {
+  display: none;
+  flex-basis: 30%;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: normal;
+}
+
+.menu li:nth-last-of-type(1) a {
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* header */
+
+header {
+  position: relative;
+  background-image: url(assets/img/section-background-portrait.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.opacity {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 2;
+}
+
+.company-introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+  width: 100%;
+}
+
+.page-intro {
+  font-size: 26px;
+  padding-bottom: 30px;
+  font-weight: bold;
+}
+
+.company-slogan {
+  font-size: 18px;
+  padding-bottom: 30px;
+  font-weight: bold;
+}
+
+.offer {
+  align-self: flex-start;
+  padding: 8px 45px;
+  background-color: transparent;
+  border: 3px solid #fff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 1s linear;
+}
+
+.offer:hover {
+  background-color: white;
+  color: black;
+}
+
+@media (min-width: 580px) {
+  .company-introduction {
+    width: 85%;
+  }
+
+  .header {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 660px) {
+  .company-introduction {
+    width: 65%;
+  }
+
+  .page-intro {
+    padding-bottom: 50px;
+  }
+
+  .company-slogan {
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .company-introduction {
+    width: 60%;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .company-introduction {
+    width: 60%;
+  }
+}
+
+/* main */
+
+.arrow-up {
+  content: "";
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 35px;
+  height: 35px;
+  z-index: 0;
+  background-color: #a0a0a0;
+  border-radius: 50%;
+}
+
+.fa-arrow-circle-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  z-index: 0;
+}
+
+.arrow-up-a {
+  z-index: 0;
+}
+
+/*--about-us*/
+
+.about-us {
+  padding: 50px 0;
+  background-color: #f1f1f1;
+}
+
+.about {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.our-specialists {
+  font-size: 24px;
+  font-weight: bold;
+  color: #152d41;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.img-container {
+  margin: 45px auto;
+  width: 199px;
+  height: 199px;
+}
+
+.profile-picture {
+  width: auto;
+  height: 100%;
+}
+
+.employer-details {
+  font-size: 18px;
+  line-height: 21px;
+  text-align: justify;
+}
+
+.employer-name {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 533px) and (orientation: landscape) {
+  .our-specialists {
+    align-self: flex-start;
   }
-  to {
-    transform: rotate(360deg);
+
+  .employer-details {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 960px) {
+  .our-specialists {
+    align-self: flex-start;
+    margin-bottom: 70px;
+  }
+
+  .team-member {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .team-member:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+/*--our-services */
+
+.our-services {
+  padding: 50px 0;
+  margin: 0 auto;
+  background-color: #405d78;
+}
+
+.what-we-do {
+  padding-bottom: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  row-gap: 15px;
+}
+
+.service {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  background-color: #f1f1f1;
+  transition: 0.5s linear;
+}
+
+.service:hover {
+  transform: scale(1.05);
+}
+
+.service-new::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: -9px;
+  width: 18px;
+  height: 18px;
+  background-color: #e07a64;
+  border-radius: 50%;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@media (min-width: 533px) {
+  .services {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+
+  .what-we-do {
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 640px) {
+  .services {
+    row-gap: 30px;
+    column-gap: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .services {
+    column-gap: 60px;
+  }
+}
+
+@media (min-width: 960px) {
+  .services {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 60px;
+  }
+}
+
+/* footer */
+
+footer {
+  background-color: #4e4e4e;
+  padding: 20px 0;
+}
+
+.copyright-and-socials {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.socials {
+  font-size: 24px;
+}
+
+.fab {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .copyright-and-socials {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+  }
+
+  .copyright {
+    font-size: 16px;
+  }
+
+  .socials {
+    margin: 0 7px;
   }
 }
